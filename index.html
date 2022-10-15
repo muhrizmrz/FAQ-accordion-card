@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwindConfig.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(() => {
+      $('summary').click(function () {
+        $(this).find('.question').toggleClass('text-darkdesaturatedblue font-bold')
+        $(this).find('.arrow').toggleClass('rotate-180')
+      })
+    });
+  </script>
+
+</head>
+<body>
+  <main class="w-full relative xl:h-screen md:h-screen h-fit xl:p-0 py-48 grid place-items-center bg-gradient-to-t from-Softblue to-Softviolet">
+    <article class="xl:w-[918px] xl:h-[460px] xl:flex-row lg:w-[918px] lg:h-[460px] lg:flex-row  w-[90%] bg-white rounded-3xl flex flex-col xl:space-x-4 lg:space-x-4">
+      <!-- DESKTOP BG PATTERN-->
+      <section class="xl:w-1/2 lg:w-1/2 xl:block lg:block hidden relative">
+        <img class="absolute -bottom-12 right-40" src="./images/bg-pattern-desktop.svg" alt="bg-pattern" />
+        <img class="absolute top-14 -left-20 overflow-hidden" src="./images/illustration-woman-online-desktop.svg"
+          alt="bg-pattern" />
+        <img class="absolute top-44 -left-24 overflow-hidden" src="./images/illustration-box-desktop.svg"
+          alt="bg-pattern" />
+      </section>
+
+      <!---MOBILE BG PATTERN-->
+      <section class="w-full relative xl:hidden md:hidden">
+        <img class="w-3/4 absolute left-12" src="./images/bg-pattern-mobile.svg" alt="bg-pattern" />
+        <img class="w-3/4 absolute left-12 -top-32" src="./images/illustration-woman-online-mobile.svg" alt="bg-pattern" />
+      </section>
+      <!------>
+
+
+      <section class="xl:w-1/2 xl:py-16 xl:px-10 xl:m-0 lg:m-0  py-16 px-6 mt-24  font-bold font-KumbhSans">
+        <h1 class="xl:text-left lg:text-left text-center text-4xl text-darkdesaturatedblue">FAQ</h1>
+        
+        <article class="mt-6 h-5/6 flex flex-col space-y-4 overflow-auto">
+          <details class="font-normal py-2 border-b-2 border-Lightgrayishblue">
+            <summary class="summary list-none text-Darkgrayishblue group">
+              <p class="inline-flex cursor-pointer items-center space-x-6">
+                <span class="question">How many team members can I invite?</span>
+                <span>
+                  <img class="arrow" src="./images/icon-arrow-down.svg" alt="arrow-down" />
+                </span>
+              </p>
+            </summary>
+            <p class="text-Darkgrayishblue">You can invite up to 2 additional users on the Free plan. There is no limit
+              on
+              team members for the Premium plan.</p>
+          </details>
+
+          <details class="font-normal py-2 border-b-2 border-Lightgrayishblue">
+            <summary class="list-none text-Darkgrayishblue">
+              <p class="inline-flex cursor-pointer items-center space-x-6">
+                <span class="question">What is the maximum file upload size?</span>
+                <span>
+                  <img class="arrow" src="./images/icon-arrow-down.svg" alt="arrow-down" />
+                </span>
+              </p>
+            </summary>
+            <p class="text-Darkgrayishblue">No more than 2GB. All files in your account must fit your allotted storage
+              space.</p>
+          </details>
+
+          <details class="font-normal py-2 border-b-2 border-Lightgrayishblue">
+            <summary class="list-none text-Darkgrayishblue">
+              <p class="inline-flex cursor-pointer items-center space-x-6">
+                <span class="question">How do I reset my password?</span>
+                <span>
+                  <img class="arrow" src="./images/icon-arrow-down.svg" alt="arrow-down" />
+                </span>
+              </p>
+            </summary>
+            <p class="text-Darkgrayishblue">Click “Forgot password” from the login page or “Change password” from your
+              profile page.
+              A reset link will be emailed to you.</p>
+          </details>
+
+          <details class="font-normal py-2 border-b-2 border-Lightgrayishblue">
+            <summary class="list-none text-Darkgrayishblue">
+              <p class="inline-flex cursor-pointer items-center space-x-6">
+                <span class="question">Can I cancel my subscription?</span>
+                <span>
+                  <img class="arrow" src="./images/icon-arrow-down.svg" alt="arrow-down" />
+                </span>
+              </p>
+            </summary>
+            <p class="text-Darkgrayishblue">Yes! Send us a message and we’ll process your request no questions asked.
+            </p>
+          </details>
+
+          <details class="font-normal py-2 border-b-2 border-Lightgrayishblue">
+            <summary class="list-none text-Darkgrayishblue">
+              <p class="inline-flex cursor-pointer items-center space-x-6">
+                <span class="question">Do you provide additional support?</span>
+                <span>
+                  <img class="arrow" src="./images/icon-arrow-down.svg" alt="arrow-down" />
+                </span>
+              </p>
+            </summary>
+            <p class="text-Darkgrayishblue">Chat and email support is available 24/7. Phone lines are open during normal
+              business hours.</p>
+          </details>
+
+        </article>
+      </section>
+    </article>
+    <div class="attribution absolute bottom-12 text-white">
+      Challenge by <a class="text-blue-900" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+      Coded by <a class="text-blue-900" href="https://www.frontendmentor.io/profile/muhrizmrz">@muhrizmrz</a>.
+    </div>
+  </main>
+
+</body>
+</html>
